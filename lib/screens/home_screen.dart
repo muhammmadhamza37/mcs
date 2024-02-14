@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:mcs/screens/menu_screen.dart';
 import 'package:mcs/screens/size_guide_screen.dart';
 import 'package:mcs/screens/user_account.dart';
+
+
 class HomeScreen extends StatefulWidget {
 
 
@@ -14,66 +16,26 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  // int _selectedIndex = 0;
-  void _navigateBottomBar(int index){
-  //   setState(() {
-  //     _selectedIndex = index;
-  //   });
-  }
+  int _selectedIndex = 0;
+
+
   @override
   Widget build(BuildContext context) {
+
 
     final height = MediaQuery.sizeOf(context).height *  1;
     final width  = MediaQuery.sizeOf(context).width *  1;
 
     return  Scaffold(
-      bottomNavigationBar: BottomNavigationBar(
-        selectedLabelStyle: const TextStyle(fontSize: 5),
-        backgroundColor: Colors.grey,
-        // currentIndex: _selectedIndex,
-        onTap: _navigateBottomBar,
-        type: BottomNavigationBarType.fixed,
-        items: [
-          BottomNavigationBarItem(
-              icon: IconButton(
-                  onPressed: (){
-                    Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => const HomeScreen()));
-                  },
-                  icon: const Icon(Icons.home)),
-              label: 'Home'),
-          BottomNavigationBarItem(
-              icon: IconButton(
-                  onPressed: () {
-                    Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => const MenuScreen()));
-                  },
-                  icon: const Icon(Icons.menu)),
-              label: 'Menu'),
-          BottomNavigationBarItem(
-              icon: IconButton(
-                  onPressed: () {
-                    Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) =>  const SizeGuideScreen()));
-                  },
-                  icon: const Icon(Icons.format_size)),
-              label: 'Size Guide'),
-          BottomNavigationBarItem(
-              icon: IconButton(
-                  onPressed: () {
-                    Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) =>  const UserAccountScreen()));
-                  },
-                  icon: const Icon(Icons.account_circle)),
-              label: 'User Account'),
-        ],
-      ),
+
 
       appBar: AppBar(
         centerTitle: true,
         title: const Text('Home Screen'),
       ),
-      body: SingleChildScrollView(
+      body:
+
+      SingleChildScrollView(
         child: Column(
           children: [
             CarouselSlider(
@@ -90,7 +52,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ),
                 ),
-        
+
                 //2nd Image of Slider
                 Container(
                   margin: const EdgeInsets.all(6.0),
@@ -102,7 +64,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ),
                 ),
-        
+
                 //3rd Image of Slider
                 Container(
                   margin: const EdgeInsets.all(6.0),
@@ -115,7 +77,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
               ],
-        
+
               //Slider Container properties
               options: CarouselOptions(
                 height: 310.0,
@@ -129,19 +91,19 @@ class _HomeScreenState extends State<HomeScreen> {
                 viewportFraction: 0.8,
               ),
             ),
-        
+
             SizedBox(height: height *0.02,),
             Container(
               width: 320,
-                height: 100,
-               decoration: BoxDecoration(
+              height: 100,
+              decoration: BoxDecoration(
                 color: Colors.black12,
                 borderRadius: BorderRadius.circular(12),
-                ),
+              ),
               child:   Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                   const Padding(
+                  const Padding(
                     padding:  EdgeInsets.only(left: 12),
                     child: Text('GET 10%OFF',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
                   ),
@@ -150,7 +112,8 @@ class _HomeScreenState extends State<HomeScreen> {
 
                 ],
               ),
-              ),
+            ),
+
             SizedBox(height: height *0.02,),
 
             Row(
@@ -274,13 +237,62 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ),
                 ),
-                SizedBox(height: height *0.02,),
               ],),
+            SizedBox(height: height *0.02,),
+
+            Container(
+              width: 320,
+              height: 100,
+              decoration: BoxDecoration(
+                color: Colors.black12,
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child:   Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  const Padding(
+                    padding:  EdgeInsets.only(left: 12),
+                    child: Text('GET 10%OFF',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
+                  ),
+                  SizedBox(width: width * 0.05,),
+                  const Expanded(child: Text('CALLING ALL STUDENTS,NHS & EMERGENCY SERVICE WORKERS',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15),)),
+
+                ],
+              ),
+            ),
 
 
-        ],),
-
+          ],),
         ),
+      // _screens[_selectedIndex],
+      bottomNavigationBar: BottomNavigationBar(
+         currentIndex: _selectedIndex,
+        onTap: (value){
+           setState(() {
+             _selectedIndex =value;
+           });
+        },
+        backgroundColor: Colors.black,
+        type: BottomNavigationBarType.fixed,
+        iconSize: 25,
+        items:   const [
+
+          BottomNavigationBarItem(
+              icon: Icon(Icons.home,color: Colors.white,),label: 'Home'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.menu,color: Colors.white,),label: 'Menu'),
+
+          BottomNavigationBarItem(
+              icon: Icon(Icons.format_size_sharp,color: Colors.white,),label: 'SizeGuide'),
+
+          BottomNavigationBarItem(
+              icon: Icon(Icons.person,color: Colors.white,),label: 'User'),
+        ],
+
+
+
+
+      ),
       );
   }
 }

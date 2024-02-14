@@ -10,6 +10,16 @@ class UserAccountScreen extends StatefulWidget {
 class _UserAccountScreenState extends State<UserAccountScreen> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      body:  Column(
+        children: [
+          Container(
+            height: 20,
+            width: 20,
+            color: Colors.red,
+          ),
+        ],
+      ),
+    );
   }
 }

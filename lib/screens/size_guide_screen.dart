@@ -10,6 +10,16 @@ class SizeGuideScreen extends StatefulWidget {
 class _SizeGuideScreenState extends State<SizeGuideScreen> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      body: Column(
+        children: [
+          Container(
+            height: 20,
+            width: 20,
+            color: Colors.red,
+          ),
+        ],
+      ),
+    );
   }
 }
