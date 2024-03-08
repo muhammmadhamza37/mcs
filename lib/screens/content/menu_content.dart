@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
-// import 'package:mcs/screens/home_screen.dart';
 import 'package:mcs/widgets/product_gridview_container.dart';
 
-class PeshawarZalmi extends StatefulWidget {
-  const PeshawarZalmi({Key? key}) : super(key: key);
+class MenuContent extends StatefulWidget {
+  const MenuContent({Key? key}) : super(key: key);
 
   @override
-  State<PeshawarZalmi> createState() => _PeshawarZalmiState();
+  State<MenuContent> createState() => _MenuContentState();
 }
 
-class _PeshawarZalmiState extends State<PeshawarZalmi> {
+class _MenuContentState extends State<MenuContent> {
   // int _selectedIndex = 1;
   @override
   Widget build(BuildContext context) {
@@ -27,37 +26,37 @@ class _PeshawarZalmiState extends State<PeshawarZalmi> {
         crossAxisSpacing: 4,
         children: const [
           ProductContainer(
-              imagePath: 'assets/images/pz_1.jpg',
+              imagePath: 'assets/images/4.jpg',
               productName: 'Kaptaan Chappal',
               productType: 'Chappal Type',
               normalPrice: 3500,
               discountedPrice: 2500),
           ProductContainer(
-              imagePath: 'assets/images/pz_2.jpg',
+              imagePath: 'assets/images/kaptaan.jpg',
               productName: 'Kaptaan Chappal',
               productType: 'Chappal Type',
               normalPrice: 4000,
               discountedPrice: 3000),
           ProductContainer(
-              imagePath: 'assets/images/pz_3.jpg',
+              imagePath: 'assets/images/kaptaan.jpg',
               productName: 'Kaptaan Chappal',
               productType: 'Chappal Type',
               normalPrice: 4000,
               discountedPrice: 3000),
           ProductContainer(
-              imagePath: 'assets/images/pz_4.jpg',
+              imagePath: 'assets/images/kaptaan.jpg',
               productName: 'Kaptaan Chappal',
               productType: 'Chappal Type',
               normalPrice: 4000,
               discountedPrice: 3000),
           ProductContainer(
-              imagePath: 'assets/images/pz_5.jpg',
+              imagePath: 'assets/images/4.jpg',
               productName: 'Kaptaan Chappal',
               productType: 'Chappal Type',
               normalPrice: 3500,
               discountedPrice: 2500),
           ProductContainer(
-              imagePath: 'assets/images/pz_6.jpg',
+              imagePath: 'assets/images/kaptaan.jpg',
               productName: 'Kaptaan Chappal',
               productType: 'Chappal Type',
               normalPrice: 4000,
